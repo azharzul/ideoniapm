@@ -72,6 +72,8 @@ function checkUserPermissions(permissionToCheck) {
       if (document.body.className != 'not_connected') {
           for (var i = 0; i < permissions.length; i++) {
             var perm = permissions[i];
+            alert(perm);
+            alert(JSON.stringify(response));
             var enabledElementName = document.getElementById('enabled_perm_' + perm);
             var disabledElementName = document.getElementById('disabled_perm_' + perm);
             if (response.data[0][perm] == 1) {
@@ -105,7 +107,7 @@ function promptLogin() {
 
 //This will prompt the user to grant you acess to a given permission
 function promptPermission(permission) {
-  alert('login');
+  alert('permission');
   FB.login(function(response) {
     if (response.authResponse) {
       checkUserPermissions(permission)
