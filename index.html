@@ -1,82 +1,33 @@
-<html xmlns:og="http://ogp.me/ns" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en">
-<head>
-  <title>Hackbook</title>
-  <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-  
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-
-<body>
-  <!-- This initializes the Facebook JS SDK. -->
-  <div id="fb-root"></div>
-  
-  <div id="header">
-    <div id="back-link" onclick="openPage('root')"><div id="back">&lt; Back</div></div>
-    <div id="title">Title</div>
-
-    <div id="right-block">
-      <div class="show_when_not_connected">
-        <a onclick="promptLogin();" class="login-button"> 
-          <span>Login</span>
-        </a>
-      </div>
-    </div>
-  </div>
-  
-  <div id="action">
-    <div id="loading-icon"></div>
-  
-    <div id="msg"></div>
-  </div>
-  
-  <!-- Page: Homepage -->
-  <div id="page-root" class="page">
-      <div class="show_when_connected">
-        <div id="welcome"><img id="user-picture" /><br /><span id="user-name"></span></div>
-      </div>
-
-     <ul>
-        <li class="menu-item" onclick="promptPermission(permissions);">Permissions</li>
-        <!--<li class="menu-item" onclick="openPage('Credits');" id="credits-button">Credits</li>-->
-        <!-- <li class="menu-item" onclick="openPage('Social-Plugins');">Social Plugins</li> --> 
-    </ul>
-    <div id="like-button"><fb:like url="http://www.cnn.com/" width="275"></fb:like></div>
-  </div>
-  
- 
- <div id="deviceready"></div>
- 
-  <script type="text/javascript" src="phonegap.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
-  <!-- cordova facebook plugin -->
-  <script src="cdv-plugin-fb-connect.js"></script>
-  <!-- facebook js sdk -->
-  <script src="facebook-js-sdk.js"></script> 
-  
-  <script src="js/_config.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/feed.js"></script>
-  <script src="js/graph_api.js"></script>
-  <script src="js/requests.js"></script>
-  <!--<script src="js/credits.js"></script>-->
-  
-  <script>
-      // Initialize the Facebook SDK
-      document.addEventListener('deviceready', function() {
-          
-	  FB.init({
-              appId: '174068009457211',
-              nativeInterface: CDV.FB,
-              useCachedDialogs: false
-          });
-      
-          FB.getLoginStatus(handleStatusChange);
-      
-          authUser();
-          updateAuthElements();
-      });
-  </script>
-  
-</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/pm.css" />
+        <title>Pocket Money</title>
+    </head>
+    <body>
+        <div class="canvas">
+        	<div id="login-panel" class="text-center">
+            	<div id="login-logo"></div>
+            	<a onclick="promptLogin()" class="login-button"></a>
+            	<div class="fblogin"></div>
+            	<a href="#" class="btn btm-success">Register</a>
+            	<a href="#" class="btn btm-warning">Login</a>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script src="cdv-plugin-fb-connect.js"></script>
+        <script src="facebook-js-sdk.js"></script> 
+        <script src="js/ui.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/feed.js"></script>
+        <script src="js/graph_api.js"></script>
+        <script src="js/requests.js"></script>
+        <script type="text/javascript" src="js/pmFacebook.js"></script>
+    </body>
 </html>
