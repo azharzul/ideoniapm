@@ -23,7 +23,7 @@ function handleStatusChange(session) {
         
         //Fetch user's id, name, and picture
         FB.api('/me', {
-          fields: 'name, picture, email, location, birthday'
+          fields: 'name, picture.type(large), email, location, birthday'
         },
         function(response) {
           if (!response.error) {
