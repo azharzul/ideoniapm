@@ -9,6 +9,10 @@
     </author>
     <gap:platform name="ios" />
     <gap:platform name="android" />
+    <gap:plugin name="com.phonegap.plugins.facebookconnect">
+        <param name="APP_ID" value="174068009457211" />
+        <param name="APP_NAME" value="Pocket Money" />
+    </gap:plugin>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
