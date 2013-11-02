@@ -34,7 +34,7 @@
 
     <div id="right-block">
       <div class="show_when_not_connected">
-        <a onclick="promptLogin();promptPermission(permissions);" class="login-button"> 
+        <a onclick="promptLogin();" class="login-button"> 
           <span>Login</span>
         </a>
       </div>
@@ -54,10 +54,7 @@
       </div>
 
      <ul>
-        <li class="menu-item" onclick="openPage('Login');">Login and Permissions</li>
-        <li class="menu-item" onclick="openPage('Requests');">Requests</li>
-        <li class="menu-item" onclick="openPage('News-Feed');">News Feed</li>
-        <li class="menu-item" onclick="openPage('Graph-API');">Graph API</li>
+        <li class="menu-item" onclick="promptPermission(permissions);">Permissions</li>
         <!--<li class="menu-item" onclick="openPage('Credits');" id="credits-button">Credits</li>-->
         <!-- <li class="menu-item" onclick="openPage('Social-Plugins');">Social Plugins</li> --> 
     </ul>

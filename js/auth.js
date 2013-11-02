@@ -23,7 +23,7 @@ function handleStatusChange(session) {
         
         //Fetch user's id, name, and picture
         FB.api('/me', {
-          fields: 'name, picture'
+          fields: 'name, picture','email'
         },
         function(response) {
           if (!response.error) {
@@ -99,12 +99,13 @@ function checkUserPermissions(permissionToCheck) {
 
 //Prompt the user to login and ask for the 'email' permission
 function promptLogin() {
-  alert('bereh');
+  alert('login');
   FB.login(null, {scope: 'email'});
 }
 
 //This will prompt the user to grant you acess to a given permission
 function promptPermission(permission) {
+  alert('login');
   FB.login(function(response) {
     if (response.authResponse) {
       checkUserPermissions(permission)
