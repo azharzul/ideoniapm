@@ -23,7 +23,7 @@ function handleStatusChange(session) {
         
         //Fetch user's id, name, and picture
         FB.api('/me', {
-          fields: 'name, picture'
+          fields: 'name, picture, email'
         },
         function(response) {
           if (!response.error) {
@@ -35,7 +35,7 @@ function handleStatusChange(session) {
             
             //Update display of user name and picture
             if (document.getElementById('user-name')) {
-              document.getElementById('user-name').innerHTML = user.name;
+              document.getElementById('user-name').innerHTML = user.name+'<small>'+user.email+'</small>';
             }
             if (document.getElementById('user-picture')) {
               document.getElementById('user-picture').src = user.picture.data.url;
@@ -72,8 +72,6 @@ function checkUserPermissions(permissionToCheck) {
       if (document.body.className != 'not_connected') {
           for (var i = 0; i < permissions.length; i++) {
             var perm = permissions[i];
-            alert(perm);
-            alert(JSON.stringify(response));
             var enabledElementName = document.getElementById('enabled_perm_' + perm);
             var disabledElementName = document.getElementById('disabled_perm_' + perm);
             if (response.data[0][perm] == 1) {
@@ -101,13 +99,11 @@ function checkUserPermissions(permissionToCheck) {
 
 //Prompt the user to login and ask for the 'email' permission
 function promptLogin() {
-  alert('login');
   FB.login(null, {scope: 'email'});
 }
 
 //This will prompt the user to grant you acess to a given permission
 function promptPermission(permission) {
-  alert('permission');
   FB.login(function(response) {
     if (response.authResponse) {
       checkUserPermissions(permission)
