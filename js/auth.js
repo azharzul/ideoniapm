@@ -7,7 +7,7 @@
 
 var user = [];
 
-var permissions = ['user_status', 'publish_checkins', 'user_likes', 'email'];
+var permissions = ['email', 'user_birthday', 'user_location'];
 
 //Detect when Facebook tells us that the user's session has been returned
 function authUser() {
@@ -23,7 +23,7 @@ function handleStatusChange(session) {
         
         //Fetch user's id, name, and picture
         FB.api('/me', {
-          fields: 'name, picture, email'
+          fields: 'name, picture, email, location, birthday'
         },
         function(response) {
           if (!response.error) {
@@ -35,7 +35,7 @@ function handleStatusChange(session) {
             
             //Update display of user name and picture
             if (document.getElementById('user-name')) {
-              document.getElementById('user-name').innerHTML = user.name+'<small>'+user.email+'</small>';
+              document.getElementById('user-name').innerHTML = user.name+'<br><small>'+JSON.stringify(response)+'</small>';
             }
             if (document.getElementById('user-picture')) {
               document.getElementById('user-picture').src = user.picture.data.url;
@@ -99,7 +99,7 @@ function checkUserPermissions(permissionToCheck) {
 
 //Prompt the user to login and ask for the 'email' permission
 function promptLogin() {
-  FB.login(null, {scope: 'email'});
+  FB.login(null, {scope: 'email,user_birthday,user_location'});
 }
 
 //This will prompt the user to grant you acess to a given permission
