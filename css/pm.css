@@ -6,7 +6,7 @@
 	width: 170px;
 	height: 200px;
 }
-#login-facebook
+.login-facebook
 {
 	background:url(../img/facebook_signin_button.png) no-repeat center top; /* 150px x 22px */
 	width: 150px;
