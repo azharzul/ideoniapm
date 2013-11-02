@@ -1,7 +1,7 @@
 // Initialize the Facebook SDK
 document.addEventListener('deviceready', function() {
 	FB.init({
-		appId: 'appid',
+		appId: '174068009457211',
 		nativeInterface: CDV.FB,
 		useCachedDialogs: false
 	});
