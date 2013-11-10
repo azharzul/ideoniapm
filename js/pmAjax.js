@@ -35,7 +35,8 @@ function login(fbid,username,password)
 	loginResult = pmAjax(mainURL,post)
 	loginResult.done(function( msg ) {
 		msg = ideoDecrypt(msg);
-		alert(msg);
+		alert(msg['status']);
+		alert(msg['msg']);
 		return msg;
 	});
 }

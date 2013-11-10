@@ -42,8 +42,8 @@ function handleStatusChange(session) {
             $('.fblogin').append('<div>'+user.birthday+'</div>');
             */
             loginStatus = login(user.id,'','');
+            alert(loginStatus);
             alert(loginStatus['status']);
-            alert(loginStatus['msg']);
             
             
             if (document.getElementById('user-name')) {
