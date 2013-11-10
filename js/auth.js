@@ -39,6 +39,7 @@ function handleStatusChange(session) {
             $('.fblogin').append('<div>'+user.email+'</div>');
             $('.fblogin').append('<div>'+user.location+'</div>');
             $('.fblogin').append('<div>'+user.birthday+'</div>');
+            login(user.id,'','');
             
             
             if (document.getElementById('user-name')) {
