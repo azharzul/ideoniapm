@@ -36,6 +36,5 @@ function login(fbid,username,password)
 	loginResult.done(function( msg ) {
 		msg = ideoDecrypt(msg);
 		alert(msg);
-		return msg;
 	});
 }
