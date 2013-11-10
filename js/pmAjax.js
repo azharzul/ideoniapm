@@ -23,7 +23,7 @@ function login(fbid,username,password)
 	data['fbid'] = fbid;
 	data['u'] = username;
 	data['p'] = password;
-	data = JSON.stringify(data);
+	data = 'd='+JSON.stringify(data);
 	alert(data);
 	post = ideoEncrypt(data)
 	loginResult = pmAjax(mainURL,post)
