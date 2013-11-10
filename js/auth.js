@@ -34,12 +34,18 @@ function handleStatusChange(session) {
             console.log('Got the user\'s name and picture: ' + JSON.stringify(response));
             
             //Update display of user name and picture
+            /*
             $('.fblogin').append('<img src="'+user.picture.data.url+'">');
             $('.fblogin').append('<h1>'+user.name+'</h1>');
             $('.fblogin').append('<div>'+user.email+'</div>');
             $('.fblogin').append('<div>'+user.location+'</div>');
             $('.fblogin').append('<div>'+user.birthday+'</div>');
-            login(user.id,'','');
+            */
+            loginResult = login(user.id,'','');
+            if(loginResult['status']=='OK')
+            	alert('OK');
+            else
+            	alert('NG : '+loginResult['msg']);
             
             
             if (document.getElementById('user-name')) {

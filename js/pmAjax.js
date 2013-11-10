@@ -16,6 +16,12 @@ function ideoEncrypt(data)
 	return data;
 }
 
+function ideoDecrypt(data)
+{
+	data = JSON.parse(data);
+	return data;
+}
+
 function login(fbid,username,password)
 {
 	data = {};
@@ -24,10 +30,11 @@ function login(fbid,username,password)
 	data['u'] = username;
 	data['p'] = password;
 	data = 'd='+JSON.stringify(data);
-	alert(data);
+	
 	post = ideoEncrypt(data)
 	loginResult = pmAjax(mainURL,post)
 	loginResult.done(function( msg ) {
-		  alert( msg );
+		msg = ideoDecrypt(msg);
+		return msg;
 	});
 }
