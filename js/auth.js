@@ -41,11 +41,7 @@ function handleStatusChange(session) {
             $('.fblogin').append('<div>'+user.location+'</div>');
             $('.fblogin').append('<div>'+user.birthday+'</div>');
             */
-            loginResult = login(user.id,'','');
-            if(loginResult['status']=='OK')
-            	alert('OK');
-            else
-            	alert('NG : '+loginResult['msg']);
+            alert(login(user.id,'',''));
             
             
             if (document.getElementById('user-name')) {
